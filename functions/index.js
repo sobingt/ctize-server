@@ -43,7 +43,7 @@ function sendNotification(type) {
                             userId: String(commentData.creator),
                             commentId: String(commentId),
                             postId: String(postId),
-                            title: String(user.userName).concat(" has commented"),
+                            title: String(user.userName).concat(":"),
                             body: String(commentData.comment)
                         }
                     };
