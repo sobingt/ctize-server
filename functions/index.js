@@ -24,7 +24,7 @@ exports.notifyComment = functions.https.onRequest((request, response) => {
 function sendNotification(type) {
 	//send notification only if the id exists in database
     if (type === "comment") {
-        let ref = admin.database().ref(communityId + "/comments/" + postId + "/" + commentId);
+        let ref = admin.database().ref("Posts/" + communityId + "/comments/" + postId + "/" + commentId);
         ref.once("value", function(snapshot) {
             let commentData = snapshot.val();
             if (commentData != null) {
